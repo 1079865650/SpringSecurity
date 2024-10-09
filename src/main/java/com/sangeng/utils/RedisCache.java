@@ -187,7 +187,9 @@ public class RedisCache
     {
         redisTemplate.opsForHash().put(key, hKey, value);
     }
- 
+
+
+
     /**
      * 获取Hash中的数据
      *

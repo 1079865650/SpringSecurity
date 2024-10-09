@@ -1,5 +1,6 @@
 package com.sangeng.domain;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -30,6 +31,7 @@ public class User implements Serializable {
     /**
     * 用户名
     */
+    @TableField("user_name")
     private String userName;
     /**
     * 昵称
@@ -38,6 +40,7 @@ public class User implements Serializable {
     /**
     * 密码
     */
+    @TableField("password")
     private String password;
     /**
     * 账号状态（0正常 1停用）

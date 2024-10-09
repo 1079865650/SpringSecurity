@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sangeng.mapper.MenuMapper">
+    <select id="selectPermsByUserId" resultType="java.lang.String">
+        select distinct dd.perms
+        from sys_user_role aa
+                 left join sys_role bb on aa.role_id=bb.id
+                 left join sys_role_menu cc on bb.id = cc.role_id
+                 left join sys_menu dd on cc.menu_id = dd.id
+        where
+            user_id = #{userid}
+          and bb.`status`=0
+          and dd.`status` = 0
+    </select>
+</mapper>
